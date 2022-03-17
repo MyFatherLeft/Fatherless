@@ -3,20 +3,14 @@ local TextLabel = Instance.new("TextLabel")
 
 MyFatherLeft.Name = "MyFatherLeft"
 MyFatherLeft.Parent = game.CoreGui
-MyFatherLeft.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 TextLabel.Parent = MyFatherLeft
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.800000012, -5, 1, -30)
-TextLabel.Size = UDim2.new(0.200000003, 0, 0, 25)
-TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Position = UDim2.new(0, 0, 1, -25)
+TextLabel.Size = UDim2.new(0, 200, 0, 25)
 TextLabel.Text = "Father Less 😭"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
 TextLabel.TextWrapped = true
-TextLabel.TextXAlignment = Enum.TextXAlignment.Right
 
 local function EYIIQH_fake_script()
 	local script = Instance.new('LocalScript', TextLabel)
