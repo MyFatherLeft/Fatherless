@@ -27,7 +27,7 @@ IsUpToDate = pcall(function()
     }
 end)
 
-if IsUpToDate then print("ballz!!! :Scream:")
+if IsUpToDate then print("ballz!!! :Scream:") end
 
 local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/MyFatherLeft/Fatherless/main/stole.lua",true))()
 local main = lib:Window()
