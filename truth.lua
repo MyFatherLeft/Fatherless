@@ -2,7 +2,7 @@ local MyFatherLeft = Instance.new("ScreenGui")
 local TextLabel = Instance.new("TextLabel")
 
 MyFatherLeft.Name = "MyFatherLeft"
-MyFatherLeft.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+MyFatherLeft.Parent = game.CoreGui
 MyFatherLeft.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 TextLabel.Parent = MyFatherLeft
