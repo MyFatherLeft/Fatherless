@@ -1,46 +1,33 @@
-PhantomStudios_Client = {}
-PhantomStudios_Client.GameSettings = game:GetService('HttpService'):JSONDecode(game:HttpGet("https://raw.githubusercontent.com/MyFatherLeft/Fatherless/main/settings.saveme", true))
+FatherLess_Client = {}
+FatherLess_Client.GameSettings = game:GetService('HttpService'):JSONDecode(game:HttpGet("https://raw.githubusercontent.com/MyFatherLeft/Fatherless/main/settings.saveme", true))
 
 IsUpToDate = pcall(function()
     Client = {
         Toggles = {
-            SilentAim = PhantomStudios_Client.GameSettings.Toggles.SilentAim or false,
-            VisibleCheck = PhantomStudios_Client.GameSettings.Toggles.VisibleCheck or false,
-            Head = PhantomStudios_Client.GameSettings.Toggles.Head or false,
-            UseFov = PhantomStudios_Client.GameSettings.Toggles.UseFov or false,
-            NoRecoil = PhantomStudios_Client.GameSettings.Toggles.NoRecoil or false,
-            NoSpread = PhantomStudios_Client.GameSettings.Toggles.NoSpread or false,
-            SmallCrosshair = PhantomStudios_Client.GameSettings.Toggles.SmallCrosshair or false,
-            NoSway = PhantomStudios_Client.GameSettings.Toggles.NoSway or false,
-            NoBob = PhantomStudios_Client.GameSettings.Toggles.NoBob or false,
-            NoCamBob = PhantomStudios_Client.GameSettings.Toggles.NoCamBob or false,
-            Boxes = PhantomStudios_Client.GameSettings.Toggles.Boxes or false,
-            Tracers = PhantomStudios_Client.GameSettings.Toggles.Tracers or false,
-            Skeleton = PhantomStudios_Client.GameSettings.Toggles.Skeleton or false,
-            Invisible = PhantomStudios_Client.GameSettings.Toggles.Invisible or false
+            SilentAim = FatherLess_Client.GameSettings.Toggles.SilentAim or false,
+            VisibleCheck = FatherLess_Client.GameSettings.Toggles.VisibleCheck or false,
+            Head = FatherLess_Client.GameSettings.Toggles.Head or false,
+            UseFov = FatherLess_Client.GameSettings.Toggles.UseFov or false,
+            NoRecoil = FatherLess_Client.GameSettings.Toggles.NoRecoil or false,
+            NoSpread = FatherLess_Client.GameSettings.Toggles.NoSpread or false,
+            SmallCrosshair = FatherLess_Client.GameSettings.Toggles.SmallCrosshair or false,
+            NoSway = FatherLess_Client.GameSettings.Toggles.NoSway or false,
+            NoBob = FatherLess_Client.GameSettings.Toggles.NoBob or false,
+            NoCamBob = FatherLess_Client.GameSettings.Toggles.NoCamBob or false,
+            Boxes = FatherLess_Client.GameSettings.Toggles.Boxes or false,
+            Tracers = FatherLess_Client.GameSettings.Toggles.Tracers or false,
+            Skeleton = FatherLess_Client.GameSettings.Toggles.Skeleton or false,
+            Invisible = FatherLess_Client.GameSettings.Toggles.Invisible or false
         },
         Values = {
-            Fov = PhantomStudios_Client.GameSettings.Values.Fov or 500,
-            WalkSpeed = PhantomStudios_Client.GameSettings.Values.WalkSpeed or 0,
-            JumpPower = PhantomStudios_Client.GameSettings.Values.JumpPower or 0
+            Fov = FatherLess_Client.GameSettings.Values.Fov or 500,
+            WalkSpeed = FatherLess_Client.GameSettings.Values.WalkSpeed or 0,
+            JumpPower = FatherLess_Client.GameSettings.Values.JumpPower or 0
         }
     }
 end)
 
-if IsUpToDate then print("ballz!!! :Scream:") end
-
-local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/MyFatherLeft/Fatherless/main/stole.lua",true))()
-local main = lib:Window()
-local Aimbot = main:Tab('Aimbot')
-local GunMods = main:Tab('Gun Mods')
-local Esp = main:Tab('Esp')
-local Misc = main:Tab('Miscellaneous')
-local FovCircle = Drawing.new("Circle")
-FovCircle.Visible = Client.Toggles.UseFov
-FovCircle.Radius = Client.Values.Fov
-FovCircle.Color = Color3.new(1, 1, 1)
-FovCircle.Thickness = 1
-FovCircle.Position = Vector2.new(workspace.Camera.ViewportSize.X * 0.5, workspace.Camera.ViewportSize.Y * 0.5)
+if IsUpToDate then print("ballz!!! :Scream:") else warn("broke!!! :sob:") return end
 
 local found = {}
 for i, v in pairs(getnilinstances()) do
@@ -88,83 +75,6 @@ for i, v in pairs(found) do
         end
     end
 end
-local chartable = debug.getupvalue(getbodyparts, 1)
-setreadonly(particle, false)
-
-Aimbot:Toggle('Silent Aim', function(state)
-    Client.Toggles.SilentAim = state
-end,Client.Toggles.SilentAim)
-
-Aimbot:Toggle('Visible Check', function(state)
-    Client.Toggles.VisibleCheck = state
-end,Client.Toggles.VisibleCheck)
-
-Aimbot:Toggle('Head Shots Only', function(state)
-    Client.Toggles.Head = state
-end,Client.Toggles.Head)
-
-Aimbot:Toggle('Use Fov', function(state)
-    Client.Toggles.UseFov = state
-    FovCircle.Visible = state
-end,Client.Toggles.UseFov)
-
-Aimbot:Slider("Fov", 1, 1000, function(num)
-    Client.Values.Fov = num
-    FovCircle.Radius = num
-end,Client.Values.Fov)
-
-GunMods:Toggle('No Recoil', function(state)
-    Client.Toggles.NoRecoil = state
-end,Client.Toggles.NoRecoil)
-
-GunMods:Toggle('No Spread', function(state)
-    Client.Toggles.NoSpread = state
-end,Client.Toggles.NoSpread)
-
-GunMods:Toggle('Small Crosshair', function(state)
-    Client.Toggles.SmallCrosshair = state
-end,Client.Toggles.SmallCrosshair)
-
-GunMods:Toggle('No Sway', function(state)
-    Client.Toggles.NoSway = state
-end,Client.Toggles.NoSway)
-
-GunMods:Toggle('No Bob', function(state)
-    Client.Toggles.NoBob = state
-end,Client.Toggles.NoBob)
-
-GunMods:Toggle('No Camera Bob', function(state)
-    Client.Toggles.NoCamBob = state
-end,Client.Toggles.NoCamBob)
-
-Esp:Toggle('Box Esp', function(state)
-    Client.Toggles.Boxes = state
-end,Client.Toggles.Boxes)
-
-Esp:Toggle('Tracer Esp', function(state)
-    Client.Toggles.Tracers = state
-end,Client.Toggles.Tracers)
-
-Esp:Toggle('Skeleton Esp', function(state)
-    Client.Toggles.Skeleton = state
-end,Client.Toggles.Skeleton)
-
-Misc:Slider("Walk Speed", 0, 100, function(num)
-    Client.Values.WalkSpeed = num
-
-    if char.alive then
-        char:setbasewalkspeed(gamelogic.currentgun.data.walkspeed + num)
-    end
-end,Client.Values.WalkSpeed)
-
-Misc:Slider("Jump Power", 0, 100, function(num)
-    Client.Values.JumpPower = num
-end,Client.Values.JumpPower)
-
-local Gravity = workspace.Gravity
-Misc:Slider("Gravity", 0, 100, function(num)
-    workspace.Gravity = (Gravity * 0.01) * (100 - num)
-end,Client.Values.Gravity)
 
 function trajectory(o, a, t, s, e)
     local f = -a
