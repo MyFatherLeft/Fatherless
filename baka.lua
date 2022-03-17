@@ -1,4 +1,33 @@
+PhantomStudios_Client = {SavedSettings = true}
 PhantomStudios_Client.GameSettings = game:GetService('HttpService'):JSONDecode(game:HttpGet("https://raw.githubusercontent.com/MyFatherLeft/Fatherless/main/settings.saveme", true))
+
+IsUpToDate = pcall(function()
+    Client = {
+        Toggles = {
+            SilentAim = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Toggles.SilentAim or false,
+            VisibleCheck = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Toggles.VisibleCheck or false,
+            Head = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Toggles.Head or false,
+            UseFov = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Toggles.UseFov or false,
+            NoRecoil = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Toggles.NoRecoil or false,
+            NoSpread = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Toggles.NoSpread or false,
+            SmallCrosshair = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Toggles.SmallCrosshair or false,
+            NoSway = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Toggles.NoSway or false,
+            NoBob = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Toggles.NoBob or false,
+            NoCamBob = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Toggles.NoCamBob or false,
+            Boxes = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Toggles.Boxes or false,
+            Tracers = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Toggles.Tracers or false,
+            Skeleton = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Toggles.Skeleton or false,
+            Invisible = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Toggles.Invisible or false
+        },
+        Values = {
+            Fov = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Values.Fov or 500,
+            WalkSpeed = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Values.WalkSpeed or 0,
+            JumpPower = DarkHub_Client.SavedSettings and DarkHub_Client.GameSettings.Values.JumpPower or 0
+        }
+    }
+end)
+
+if IsUpToDate then print("ballz!!! :Scream:")
 
 local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/MyFatherLeft/Fatherless/main/stole.lua",true))()
 local main = lib:Window()
