@@ -29,6 +29,13 @@ end)
 
 if IsUpToDate then print("ballz!!! :Scream:") else warn("broke!!! :sob:") return end
 
+local FovCircle = Drawing.new("Circle")
+FovCircle.Visible = Client.Toggles.UseFov
+FovCircle.Radius = Client.Values.Fov
+FovCircle.Color = Color3.new(1, 1, 1)
+FovCircle.Thickness = 1
+FovCircle.Position = Vector2.new(workspace.Camera.ViewportSize.X * 0.5, workspace.Camera.ViewportSize.Y * 0.5)
+
 local found = {}
 for i, v in pairs(getnilinstances()) do
     if v.ClassName == "ModuleScript" and (v.Name == "effects" or v.Name == "camera" or v.Name == "particle") then
@@ -75,6 +82,8 @@ for i, v in pairs(found) do
         end
     end
 end
+local chartable = debug.getupvalue(getbodyparts, 1)
+setreadonly(particle, false)
 
 function trajectory(o, a, t, s, e)
     local f = -a
