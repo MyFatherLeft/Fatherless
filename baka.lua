@@ -1,3 +1,4 @@
+if game.PlaceId ~= "292439477" then return end
 repeat wait(0.1) until not game.Players.LocalPlayer.PlayerGui:FindFirstChild("Loadscreen")
 
 pcall(function()
