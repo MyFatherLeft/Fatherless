@@ -18,8 +18,8 @@ pcall(function()
         },
         Values = {
             Fov = 1500,
-            WalkSpeed = 50,
-            JumpPower = 50
+            WalkSpeed = 45,
+            JumpPower = 45
         }
     }
 end)
