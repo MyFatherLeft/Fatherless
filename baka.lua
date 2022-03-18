@@ -1,5 +1,5 @@
---Loading
-game.Loaded:Wait()
+repeat wait(0.1) until game.Players:FindFirstChild(LocalPlayer.Name)
+repeat wait(0.1) until game.Players.LocalPlayer:FindFirstChild("PlayerGui")
 repeat wait(0.1) until not game.Players.LocalPlayer.PlayerGui:FindFirstChild("Loadscreen")
 
 pcall(function()
