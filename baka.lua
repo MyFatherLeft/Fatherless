@@ -1,4 +1,5 @@
---Settings edit them or something idk
+game.Players.LocalPlayer.PlayerGui:WaitForChild("Menu")
+
 pcall(function()
     Client = {
         Toggles = {
@@ -24,10 +25,8 @@ pcall(function()
     }
 end)
 
---GUI
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MyFatherLeft/Fatherless/main/truth.lua",true))()
 
---Main
 local FovCircle = Drawing.new("Circle")
 FovCircle.Visible = false
 FovCircle.Radius = Client.Values.Fov
