@@ -1,4 +1,4 @@
-game.Players.LocalPlayer.PlayerGui:WaitForChild("Menu")
+repeat wait(0.1) until game.Players.LocalPlayer.PlayerGui:FindFirstChild("Menu")
 
 pcall(function()
     Client = {
