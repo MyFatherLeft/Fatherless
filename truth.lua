@@ -20,6 +20,7 @@ TextLabel.Text = "Father Less 😭  |"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextScaled = true
 TextLabel.TextWrapped = true
+TextLabel.RichText = true
 TextLabel.TextXAlignment = Enum.TextXAlignment.Left
 
 ImageButton.Parent = TextLabel
