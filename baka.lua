@@ -13,9 +13,8 @@ pcall(function()
             NoBob = true,
             NoCamBob = true,
             Boxes = true,
-            Tracers = true,
-            Skeleton = true,
-            Invisible = true
+            Tracers = false,
+            Skeleton = true
         },
         Values = {
             Fov = 1500,
