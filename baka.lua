@@ -1,38 +1,36 @@
-FatherLess_Client = {}
-FatherLess_Client.GameSettings = game:GetService('HttpService'):JSONDecode(game:HttpGet("https://raw.githubusercontent.com/MyFatherLeft/Fatherless/main/settings.saveme", true))
-
-IsUpToDate = pcall(function()
+--Settings edit them or something idk
+pcall(function()
     Client = {
         Toggles = {
-            SilentAim = FatherLess_Client.GameSettings.Toggles.SilentAim or false,
-            VisibleCheck = FatherLess_Client.GameSettings.Toggles.VisibleCheck or false,
-            Head = FatherLess_Client.GameSettings.Toggles.Head or false,
-            UseFov = FatherLess_Client.GameSettings.Toggles.UseFov or false,
-            NoRecoil = FatherLess_Client.GameSettings.Toggles.NoRecoil or false,
-            NoSpread = FatherLess_Client.GameSettings.Toggles.NoSpread or false,
-            SmallCrosshair = FatherLess_Client.GameSettings.Toggles.SmallCrosshair or false,
-            NoSway = FatherLess_Client.GameSettings.Toggles.NoSway or false,
-            NoBob = FatherLess_Client.GameSettings.Toggles.NoBob or false,
-            NoCamBob = FatherLess_Client.GameSettings.Toggles.NoCamBob or false,
-            Boxes = FatherLess_Client.GameSettings.Toggles.Boxes or false,
-            Tracers = FatherLess_Client.GameSettings.Toggles.Tracers or false,
-            Skeleton = FatherLess_Client.GameSettings.Toggles.Skeleton or false,
-            Invisible = FatherLess_Client.GameSettings.Toggles.Invisible or false
+            SilentAim = true,
+            VisibleCheck = true,
+            Head = true,
+            UseFov = true,
+            NoRecoil = true,
+            NoSpread = true,
+            SmallCrosshair = true,
+            NoSway = true,
+            NoBob = true,
+            NoCamBob = true,
+            Boxes = true,
+            Tracers = true,
+            Skeleton = true,
+            Invisible = true
         },
         Values = {
-            Fov = FatherLess_Client.GameSettings.Values.Fov or 500,
-            WalkSpeed = FatherLess_Client.GameSettings.Values.WalkSpeed or 0,
-            JumpPower = FatherLess_Client.GameSettings.Values.JumpPower or 0
+            Fov = 1500,
+            WalkSpeed = 50,
+            JumpPower = 50
         }
     }
 end)
 
-if IsUpToDate then print("ballz!!! :Scream:") else warn("broke!!! :sob:") return end
-
+--GUI
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MyFatherLeft/Fatherless/main/truth.lua",true))()
 
+--Main
 local FovCircle = Drawing.new("Circle")
-FovCircle.Visible = Client.Toggles.UseFov
+FovCircle.Visible = false
 FovCircle.Radius = Client.Values.Fov
 FovCircle.Color = Color3.new(1, 1, 1)
 FovCircle.Thickness = 1
